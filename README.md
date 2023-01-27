@@ -4,13 +4,13 @@ PeopleSoft utility to get environment variables defined within a PeopleSoft serv
 ![Screenshot](img/screenshot.png)
 
 ## How to Install
-### Step 1: Import custom menu and folder
+### Step 1: Import the custom menu and folder
 1. Launch Application Designer 
 2. click Tools, Copy Project, From File...   
 3. click Select, choose MXM_CUSTOM_INIT
 4. click Copy
 
-### Step 2: Import the project using App Designer
+### Step 2: Import the project
 1. Launch Application Designer
 2. Click Tools, Copy Project, From File...   
 3. Click Select, choose MXM_GETENV
@@ -39,7 +39,7 @@ Record: MXM_GETENV
 
 ### PeopleCode
 
-Field Event: MXM_GETENV.SEARCH.FieldChange
+Event: MXM_GETENV.SEARCH.FieldChange
 
 ```
 MXM_GETENV.DESCRLONG.Value = "";
@@ -48,7 +48,7 @@ Local string &envvalue = GetEnv(&env);
 MXM_GETENV.DESCRLONG.Value = &envvalue;
 ```
 
-Page Activate: MXM_GETENV
+Event: MXM_GETENV.PageActivate
 
 ```
 MXM_GETENV.INPUTNAME.HtmlAttributes = "placeholder=""Environment Variable""";
